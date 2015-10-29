@@ -1,0 +1,27 @@
+/*
+	Default styles for defaut templates
+*/
+#header-inside{
+	padding: 10px 0px 10px 0px;
+}
+#header-inside-right{
+	float:right;
+	width: auto;
+	display:inline;
+}
+
+.container_12{
+	width:1024px;
+}
+
+.secondary-menu{
+	float:right;
+	margin-right: 20px !important;
+}
+
+#header-menu{
+	text-align: center;
+	margin-top: 75px;
+	border:none;
+	
+}
