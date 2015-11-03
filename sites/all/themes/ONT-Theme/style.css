@@ -384,40 +384,6 @@ div.messages.warning { background:#dd6e0c; border:1px solid #d2ac7f; padding:10p
 
 div.messages.status a, div.messages.error a, div.messages.warning a { color:#ffffff; text-decoration:underline; }
 
-/* 
-* Javascript Slideshow 
-*/
-#slider { position:relative; margin:0 auto; padding:0;}
-
-#slideshow { position:relative; display:none; }
-
-#slideshow img { display:none; }
-
-.slider-item { width:100%!important; max-width:100%!important; }
-
-.slider-item .content { padding:30px 0 0 0; position:relative; }
-
-.slider-item a { outline:none; }
-
-#slider-controls-wrapper { padding:20px 0; display:none; } 
-
-#slider-controls { display:block; text-align:center; } 
-
-#slider-controls ul { display:block; overflow:hidden; margin:0; padding:0; text-align:center; }
-
-#slider-controls ul li { display:inline; margin:0; padding:0; list-style:none; }
-
-#slider-controls ul li a { width:17px; height:17px; background:url('images/inactive-slide.png') no-repeat center center; display:inline-block; padding:0; margin:0; outline:none; }
-
-#slider-controls ul li a:focus { outline:none; }
-
-#slider-controls ul li.activeSlide a:hover, #slider-controls ul li.activeSlide a { background:url('images/active-slide.png') no-repeat center center; }
-
-/* 
-* Slideshow Typography
-*/
-#slideshow h2 { margin:0 0 10px 0; color:#222222; font-size:30px; font-weight:bold; }
-
 /*  
 * Tables
 */

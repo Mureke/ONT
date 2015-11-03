@@ -117,27 +117,6 @@
 
 </div><!-- EOF: #content -->
 
-<!-- #footer -->    
-<div id="footer">
-	<!-- #footer-inside -->
-    <div id="footer-inside" class="container_12 clearfix">
-    
-        <div class="footer-area grid_4">
-        <?php print render($page['footer_first']); ?>
-        </div><!-- EOF: .footer-area -->
-        
-        <div class="footer-area grid_4">
-        <?php print render($page['footer_second']); ?>
-        </div><!-- EOF: .footer-area -->
-        
-        <div class="footer-area grid_4">
-        <?php print render($page['footer_third']); ?>
-        </div><!-- EOF: .footer-area -->
-       
-    </div><!-- EOF: #footer-inside -->
-
-</div><!-- EOF: #footer -->
-
 <!-- #footer-bottom -->    
 <div id="footer-bottom">
 
