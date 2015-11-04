@@ -4,21 +4,20 @@
 body{
 	background: #2A3269;
 }
+
 #header{
 	background-image: none;
 	background:#2A3269;
 }
+
 #header-inside{
 	padding: 10px 0px 10px 0px;
 }
+
 #header-inside-right{
 	float:right;
 	width: auto;
 	display:inline;
-}
-
-.container_12{
-	width:1024px;
 }
 
 .secondary-menu{
@@ -36,4 +35,39 @@ body{
 #footer-bottom{
 	background-image: none;
 	background: #2A3269;
+}
+
+@media (min-width: 1024px) {
+.container_12 {
+	width:1024px;
+}
+}
+
+/*
+	Header styles for different screen sizes
+*/
+
+@media (min-width: 760px) and (max-width: 980px) {
+
+}
+
+@media (min-width: 760px) {
+.mobile-logo {
+	display:none;
+}
+}
+
+@media (max-width: 759px) {
+.default-logo {
+	display: none;
+}
+
+#header-inside-left {
+	width:100%;
+}
+
+.mobile-logo img {
+	display:block;
+	margin: 0px auto;
+}
 }

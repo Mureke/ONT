@@ -4,13 +4,21 @@
     <div id="header-inside" class="container_12 clearfix">
     	<!-- #header-inside-left -->
         <div id="header-inside-left" class="grid_4">
-            
-            <?php if ($logo): ?>
-            <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
-            <?php endif; ?>
-            
+           
+           <div class="default-logo"> 
+                <?php if ($logo): ?>
+                <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+                <?php endif; ?>
+            </div><!-- EOF: .default-logo -->
+
+             <div class="mobile-logo">
+                <?php if ($logo): ?>
+                <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+                <?php endif; ?>
+            </div><!-- EOF: .mobile-logo -->
+
         </div><!-- EOF: #header-inside-left -->
-        
+  
         <!-- #header-inside-right -->    
         <div id="header-inside-right" class="grid_4">
              <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('class' => array('secondary-menu', 'links', 'clearfix')))); ?>
@@ -44,11 +52,6 @@
 
 </div><!-- EOF: #header -->
 
-
-    
-    	
-        
-   
 
 <!-- #content -->
 <div id="content">
