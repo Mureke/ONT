@@ -2,8 +2,13 @@
 	Default styles for defaut templates
 */
 body{
-	background: #2A3269;
+	background: #e8e8e8;
 }
+
+
+/*
+	Header styles
+*/
 
 #header{
 	background-image: none;
@@ -32,15 +37,15 @@ body{
 	background:#2A3269;
 }
 
-#footer-bottom{
-	background-image: none;
-	background: #2A3269;
-}
 
 @media (min-width: 1024px) {
 .container_12 {
 	width:1024px;
+	}
 }
+
+#navigation li a {
+	color:#fff !important;
 }
 
 /*
@@ -54,20 +59,42 @@ body{
 @media (min-width: 760px) {
 .mobile-logo {
 	display:none;
-}
+	}
 }
 
 @media (max-width: 759px) {
-.default-logo {
-	display: none;
+	.default-logo {
+		display: none;
+	}
+
+	#header-inside-left {
+		width:100%;
+	}
+
+	.mobile-logo img {
+		display:block;
+		margin: 0px auto;
+	}
+
+	#header-inside-right{
+		float: left;
+    	margin: 7px 0px 0px 39%;
+	}
 }
 
-#header-inside-left {
-	width:100%;
+/*Content*/
+
+#content{
+	background-image: none;
 }
 
-.mobile-logo img {
-	display:block;
-	margin: 0px auto;
-}
+/* Footer styles */
+
+#footer-bottom{
+	background-image: none;
+	background: #2A3269;
+	width: 100%;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
 }
