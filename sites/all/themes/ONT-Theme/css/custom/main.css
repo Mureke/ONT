@@ -89,6 +89,11 @@ body{
 	margin-bottom: 10px;
 }
 
+/* NEVER REMOVE THIS!!!! */
+#first-time{
+	display:none;
+}
+
 /* Footer styles */
 
 #footer-bottom{
