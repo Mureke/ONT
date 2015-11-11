@@ -103,3 +103,7 @@ body{
     height: 200px;
     padding:0px;
 }
+
+#footer-bottom img {
+	padding-top: 10px;
+}

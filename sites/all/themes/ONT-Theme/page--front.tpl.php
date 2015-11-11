@@ -123,6 +123,9 @@
     	<!-- #footer-bottom-left --> 
     	<div id="footer-bottom-left" class="grid_8">
             
+            
+            <img src="sites\all\themes\ONT-Theme\images\laurealogo.png" alt="Laurea">
+            
             <?php print render($page['footer']); ?>
             
         </div>
