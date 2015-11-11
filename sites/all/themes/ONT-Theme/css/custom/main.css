@@ -86,6 +86,7 @@ body{
 
 #content{
 	background-image: none;
+	margin-bottom: 10px;
 }
 
 /* Footer styles */
@@ -94,7 +95,6 @@ body{
 	background-image: none;
 	background: #2A3269;
 	width: 100%;
-    height: 100px;
-    position: fixed;
-    bottom: 0;
+    height: 200px;
+    padding:0px;
 }
