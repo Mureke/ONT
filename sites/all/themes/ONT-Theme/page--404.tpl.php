@@ -94,10 +94,15 @@
             <?php print render($action_links); ?>
             </ul>
             <?php endif; ?>
-            <h2> Tietoa palvelusta </h2>
+            
+			<?php print render($title_prefix); ?>
+            <?php if ($title): ?>
+            <h1><?php print $title ?></h1>
+            <?php endif; ?>
+            <?php print render($title_suffix); ?>
             
             <?php if ($tabs): ?><?php print render($tabs); ?><?php endif; ?>
-            <p id="tietoa-front"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem. Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien. Mauris varius diam vitae arcu. Sed arcu lectus auctor vitae, consectetuer et venenatis eget velit. Sed augue orci, lacinia eu tincidunt et eleifend nec lacus. Donec ultricies nisl ut felis, suspendisse potenti. Lorem ipsum ligula ut hendrerit mollis, ipsum erat vehicula risus, eu suscipit sem libero nec erat. Aliquam erat volutpat. Sed congue augue vitae neque. Nulla consectetuer porttitor pede. Fusce purus morbi tortor magna condimentum vel, placerat id blandit sit amet tortor. </p>
+            
             <?php print render($page['content']); ?>
             
             <?php print $feed_icons; ?>
@@ -122,8 +127,8 @@
     <div id="footer-bottom-inside" class="container_12 clearfix">
     	<!-- #footer-bottom-left --> 
     	<div id="footer-bottom-left" class="grid_8">
-            
-            <img src="sites\all\themes\ONT-Theme\images\laurealogo.png" alt="Laurea">
+
+             <img src="sites\all\themes\ONT-Theme\images\laurealogo.png" alt="Laurea">
             
             <?php print render($page['footer']); ?>
             
