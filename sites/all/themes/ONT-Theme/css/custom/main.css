@@ -106,12 +106,14 @@ body{
 	background: rgba(0,158,218,1);
 	border:none;
 	width: 100%;
-    height: 140px;
-    padding:0px;
+    height: 100%;
+    text-align: center;
+
 }
 
 #footer-bottom img {
 	padding-top: 10px;
 	width:20%;
 	height: 20%;
+	
 }
