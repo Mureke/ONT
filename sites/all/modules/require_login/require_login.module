@@ -1,13 +1,17 @@
 <?php
+/**
+ * @file
+ * require_login.module
+ */
+
+define('REQUIRE_LOGIN_DEFAULT_MESSAGE', 'You must login to use this site.');
 
 /**
  * Implements hook_menu().
  */
 function require_login_menu() {
-  $items = array();
-
-  $items['admin/config/system/require_login'] = array(
-    'title' => 'Require Login settings',
+  $items['admin/config/system/require-login'] = array(
+    'title' => 'Require Login',
     'description' => 'Configure Require Login settings.',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('require_login_admin_settings'),
@@ -15,7 +19,6 @@ function require_login_menu() {
     'access arguments' => array('administer require login'),
     'type' => MENU_NORMAL_ITEM,
   );
-
   return $items;
 }
 
@@ -26,7 +29,7 @@ function require_login_permission() {
   return array(
     'administer require login' => array(
       'title' => t('Administer Require Login'),
-      'description' => t('Modify excluded path for Require Login.'),
+      'description' => t('Customize require login configurations.'),
     ),
   );
 }
@@ -35,61 +38,55 @@ function require_login_permission() {
  * Implements hook_init().
  */
 function require_login_init() {
-  if (_require_login_is_exception(request_uri()) == FALSE) {
-    drupal_set_message(t('You must login to use this site.'));
+
+  // Check user authentication status. Non-authenticated visitors will
+  // automatically be redirected to /user/login. Display customizable message
+  // to user stating authentication requirements.
+  if (!require_login_authcheck()) {
+    $deny_message = variable_get('require_login_deny_message', REQUIRE_LOGIN_DEFAULT_MESSAGE);
+    drupal_set_message(t($deny_message));
     drupal_goto('user/login', array('query' => array('destination' => $_GET['q'])));
   }
 }
 
 /**
- * Function to check if the current situation is excluded.
+ * Checks current user authentication.
+ *
+ * @return boolean
+ *   Returns TRUE if authenticated and FALSE otherwise.
  */
-function _require_login_is_exception($request_uri) {
+function require_login_authcheck() {
+  $path = drupal_get_path_alias($_GET['q']);
 
-	// Site under maintenance mode.
-	if (variable_get('maintenance_mode', 0) == 1) {
-	  return TRUE;
-	}
-
-  // Using OpenID.
-  if (isset($_SESSION['openid']['service']['uri']) || isset($_SESSION['openid']['claimed_id'])) {
+  // Compare current URL with customizable excluded paths. Returns TRUE when
+  // at least one excluded path matches the current page path.
+  $exclude_paths = explode(PHP_EOL, variable_get('require_login_excluded_paths', ''));
+  foreach ($exclude_paths as $key => $exclude_path) {
+    $exclude_paths[$key] = trim($exclude_path);
+    if ($exclude_paths[$key] == '<front>') {
+      $exclude_paths[$key] = drupal_get_path_alias(variable_get('site_frontpage', 'node'));
+    }
+  }
+  if (drupal_match_path($path, implode(PHP_EOL, $exclude_paths))) {
     return TRUE;
   }
 
-  // Running cron.
-  if ($request_uri == base_path() . 'cron.php?cron_key=' . variable_get('cron_key')) {
-    return TRUE;
-  }
-
-  // Logged in.
-  if (user_is_logged_in()) {
-    return TRUE;
-  }
-
-  // Reset password or login pages.
-  if (arg(0) == 'user') {
-    if (arg(1)) {
-      if (arg(1) == 'password' || arg(1) == 'login' || arg(1) == 'reset') {
-        return TRUE;
-      }
+  // Various checks to determine exceptions for current page. Returns TRUE
+  // when at least one check has evaluated as TRUE.
+  $checks = array(
+    (user_is_logged_in()), // Authentication
+    (variable_get('maintenance_mode', 0)), // Maintenance Mode
+    (isset($_SESSION['openid'])), // OpenID
+    (preg_match('/\/cron.php/i', $path)), // Cron
+    (arg(0) == 'user' && (!arg(1) || !is_numeric(arg(1)))), // User Pages
+    (drupal_is_cli()), // Drush
+  );
+  foreach ($checks as $check) {
+    if ($check) {
+      return TRUE;
     }
   }
 
-  // Running Drupal from command line.
-  if (drupal_is_cli()) {
-    return TRUE;
-  }
-
-  // Make sure the "<front>" placeholder is working.
-  if (drupal_is_front_page()) {
-    $request_uri = '<front>';
-  }
-
-  // Excluded paths.
-  $excluded_paths = explode("\n", variable_get('require_login_excluded_paths'));
-  if (in_array(trim($request_uri, '/'), $excluded_paths)) {
-    return TRUE;
-  }
-
+  // Return FALSE when checks have all passed.
   return FALSE;
 }
