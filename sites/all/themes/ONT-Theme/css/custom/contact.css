@@ -1,0 +1,38 @@
+/* CSS-styles for contact information page */
+
+#profile {
+	width: 48%;
+	display:block;
+	height: 200px;
+	margin-right:1%;
+	float: left;
+	padding-bottom:10px;
+}
+
+#profile img {
+	width:100;
+}
+
+#profileImage {
+	width: 48%;
+	position: relative;
+	float:left;
+	text-align:center;
+}
+
+#profileInfo {
+	width: 48%;
+	float:right;
+	position: relative;
+}
+
+
+@media screen and (max-width: 420px) {
+	#profile {
+		width:100% !important;
+	}
+
+	#profile img {
+		width: 80%;
+	}
+}
