@@ -106,7 +106,9 @@
               libero nec erat. Aliquam erat volutpat. Sed congue augue vitae neque.
                Nulla consectetuer porttitor pede. Fusce purus morbi tortor magna condimentum vel, 
                placerat id blandit sit amet tortor. </p>
+            <div class="frontpage-content">
             <?php print render($page['content']); ?>
+            </div>
             
             <?php print $feed_icons; ?>
             
