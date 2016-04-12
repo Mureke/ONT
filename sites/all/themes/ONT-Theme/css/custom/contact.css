@@ -6,16 +6,19 @@
 	height: 200px;
 	margin-right:1%;
 	float: left;
-	padding-bottom:15px;
+	margin-bottom:15px;
+	border: solid white 2px;
+	background-color: white;
+	font-size: 110%;
 }
 
-#profile img {
-	width:100;
-	height: 210px;
+#profileImage img {
+	width: 100%;
+	height:200px;
 }
 
 #profileImage {
-	width: 48%;
+	width: 45%;
 	position: relative;
 	float:left;
 	text-align:center;
@@ -31,9 +34,11 @@
 @media screen and (max-width: 500px) {
 	#profile {
 		width:100% !important;
+		height:180px !important;
 	}
 
-	#profile img {
-		width: 80%;
+	#profileImage img {
+		width: 90%;
+		height: 180px !important;
 	}
 }
