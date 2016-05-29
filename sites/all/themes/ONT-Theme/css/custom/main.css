@@ -106,9 +106,10 @@ body{
 	background: rgba(0,158,218,1);
 	border:none;
 	width: 100%;
-    height: 100%;
+	height: 100%;
     text-align: center;
     padding-top: 0px;
+  
 }
 
 #footer-bottom h2 {
@@ -117,7 +118,7 @@ body{
 
 #footer-bottom img {
 	padding: 10px 5px 0px 5px;
-	width:20%;
-	height: 20%;
+	width:18%;
+	height: 18%;
 	
 }
