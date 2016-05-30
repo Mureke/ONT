@@ -1,0 +1,24 @@
+(function ($) { $(document).ready(function() {
+
+    var $window = $(window);
+  	var html = $('html');
+    var footer = $('#footer-bottom');
+
+    function checkHeight() {
+        var htmlSize = html.height();
+        var windowsize = $window.height();
+
+        if (windowsize >= htmlSize) {
+            footer.css({
+                position: 'absolute',
+                bottom: 0,
+                height: ''
+            });
+        }
+    } 
+    // Execute on load
+    checkHeight();
+    // Bind event listener
+    $(window).resize(checkHeight);
+});
+})(jQuery);

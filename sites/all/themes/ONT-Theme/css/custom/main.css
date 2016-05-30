@@ -5,7 +5,6 @@ body{
 	background: #e8e8e8;
 }
 
-
 /*
 	Header styles
 */
@@ -92,6 +91,15 @@ body{
 #content{
 	background-image: none;
 	margin-bottom: 10px;
+	min-height: 400px;
+}
+
+.view-tiedostot {
+	font-size:120%;
+}
+
+span.field-content {
+	font-size:120%;
 }
 
 /* NEVER REMOVE THIS!!!! */
@@ -106,10 +114,8 @@ body{
 	background: rgba(0,158,218,1);
 	border:none;
 	width: 100%;
-	height: 100%;
     text-align: center;
     padding-top: 0px;
-  
 }
 
 #footer-bottom h2 {
@@ -119,6 +125,26 @@ body{
 #footer-bottom img {
 	padding: 10px 5px 0px 5px;
 	width:18%;
-	height: 18%;
-	
+	height: 18%;	
+}
+
+@media (max-width: 600px) {
+	#footer-bottom img {
+		width:20%;
+		height: 20%;
+	}
+}
+
+@media (max-width: 500px) {
+	#footer-bottom img {
+		width:25%;
+		height: 25%;
+	}
+}
+
+@media (max-width: 400px) {
+	#footer-bottom img {
+		width:28%;
+		height: 28%;
+	}
 }

@@ -12,6 +12,8 @@ stylesheets[all][] = css/custom/main.css
 stylesheets[all][] = css/custom/front.css
 stylesheets[all][] = css/custom/contact.css
 
+scripts[] = js/custom/main.js
+
 regions[navigation] = Navigation
 regions[search_area] = Search area
 regions[highlighted] = Highlighted
