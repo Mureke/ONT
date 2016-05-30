@@ -4,11 +4,16 @@
   	var html = $('html');
     var footer = $('#footer-bottom');
 
+    footer.css(
+    'position',
+    'relative'
+        );
+
     function checkHeight() {
         var htmlSize = html.height();
         var windowsize = $window.height();
 
-        if (windowsize >= htmlSize) {
+        if (windowsize > htmlSize) {
             footer.css({
                 position: 'absolute',
                 bottom: 0,
