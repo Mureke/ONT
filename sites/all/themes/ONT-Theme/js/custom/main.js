@@ -4,10 +4,7 @@
   	var html = $('html');
     var footer = $('#footer-bottom');
 
-    footer.css(
-    'position',
-    'relative'
-        );
+    footer.css('position','relative');
 
     function checkHeight() {
         var htmlSize = html.height();
