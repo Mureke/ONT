@@ -16,6 +16,7 @@ body{
 
 #header-inside{
 	padding: 20px 0px 10px 0px;
+	overflow:visible !important;
 }
 
 #header-inside-right{
@@ -41,6 +42,14 @@ body{
 	background:rgba(0,158,218,1)
 }
 
+#header-menu ul.menu li.expanded ul.menu {
+	width:auto;
+}
+
+#header-menu ul.menu li.expanded ul.menu li a {
+	border: 1px solid #353535;
+	border-radius:2px;
+}
 
 @media (min-width: 1024px) {
 .container_12 {
@@ -100,6 +109,34 @@ body{
 span.field-content {
 	font-size:120%;
 }
+
+button.projectlink {
+	color: #fff;
+    background-color: rgb(0, 158, 218);
+    border-color: #46b8da;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-right:6px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+
 
 /* NEVER REMOVE THIS!!!! */
 #first-time{
