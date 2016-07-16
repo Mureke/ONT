@@ -12,6 +12,12 @@
     <div class="processimage">
       <img style="margin-left: -100px; max-width: 125%;" src="/sites/all/themes/ONT-Theme/images/opinnaytetyo.png">
     </div>
+      <!-- print node with the right process information -->
+     <?php //use variable to avoid strict warning
+      $nid = 19;
+      $nodeview = node_view(node_load($nid));
+      print drupal_render($nodeview);
+      ?>
   </div>
 
   <div class="clearfix">
