@@ -22,5 +22,6 @@
     checkHeight();
     // Bind event listener
     $(window).resize(checkHeight);
+
 });
 })(jQuery);

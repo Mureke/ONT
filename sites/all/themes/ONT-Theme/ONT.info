@@ -11,8 +11,10 @@ stylesheets[all][] = color/colors.css
 stylesheets[all][] = css/custom/main.css
 stylesheets[all][] = css/custom/front.css
 stylesheets[all][] = css/custom/contact.css
+stylesheets[all][] = css/custom/process.css
 
 scripts[] = js/custom/main.js
+scripts[] = js/custom/custom-accordion.js
 
 regions[navigation] = Navigation
 regions[search_area] = Search area
