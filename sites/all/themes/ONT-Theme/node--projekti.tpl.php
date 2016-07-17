@@ -70,7 +70,7 @@
     <?php print($item->field_nimi['und'][0]['value']) ?><br>
     <?php print($item->field_sahkoposti['und'][0]['value']) ?><br>
     <?php print($item->field_puhelinnumero['und'][0]['value']) ?><br>
-    <?php print($item->field_profile_organization['und'][0]['taxonomy_term']->name) ?><br><br>
+    <?php print($item->field_profile_organization['und'][0]['taxonomy_term']->name) ?><br>
    <?php endforeach; }
    else {
     print("Projektissa ei ole yhteyshenkilöitä");
