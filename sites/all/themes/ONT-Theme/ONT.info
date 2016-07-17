@@ -12,6 +12,7 @@ stylesheets[all][] = css/custom/main.css
 stylesheets[all][] = css/custom/front.css
 stylesheets[all][] = css/custom/contact.css
 stylesheets[all][] = css/custom/process.css
+stylesheets[all][] = css/custom/project.css
 
 scripts[] = js/custom/main.js
 scripts[] = js/custom/custom-accordion.js

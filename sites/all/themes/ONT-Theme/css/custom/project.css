@@ -1,0 +1,22 @@
+/* CSS-styles for project page */
+
+#generalInfo {
+	width: 48%;
+	float: left;
+	margin-right:2px;
+}
+
+#personelInfo {
+	width: 48%;
+	float: left;
+	margin-left:2px;
+}
+
+@media (max-width: 550px) {
+#generalInfo,
+#personelInfo {
+	width: 100%;
+	float:none;
+	margin:none;
+	}
+}

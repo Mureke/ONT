@@ -38,31 +38,73 @@
   ?>
 
   <div class="content clearfix"<?php print $content_attributes; ?>>
+
   <!-- SISÄLTÖ FIELDI KERRALLAAN  -->
-    <?php print("Kuvaus: ". $node->body['und'][0]['value']); ?><br>
+    <div id="infoblock">
+    <div id="generalInfo">
+    <h2>Projektin yleistiedot</h2>
+    <?php print("Projektin tyyppi: ".$node->field_tyyppi['und'][0]['taxonomy_term']->name); ?><br>
+    <?php print("Projektin tila: ".$node->field_tila['und'][0]['taxonomy_term']->name); ?><br>
+
+    <?php 
+    $pisteet = field_get_items('node', $node, 'field_opintopisteet');
+    if ($pisteet) {
+      print("Suoritetut opintopisteet: ".$node->field_opintopisteet['und'][0]['value']); 
+    }
+    else {
+      print("Suoritetut opintopisteet: -");
+    }
+    ?><br>
+    
     <?php print("Alku pvm: ".$node->field_ajankohta['und'][0]['value']); ?><br>
     <?php print("Loppu pvm: ".$node->field_ajankohta['und'][0]['value2']); ?><br>
-    <?php print("Opintopisteet: ".$node->field_opintopisteet['und'][0]['value']); ?><br>
-    <?php print("Tulos: ".$node->field_tulos['und'][0]['value']); ?><br>
-    <?php print("Projektin tila: ".$node->field_tila['und'][0]['taxonomy_term']->name); ?><br>
-    <?php print("Projektin tyyppi: ".$node->field_tyyppi['und'][0]['taxonomy_term']->name); ?><br>
-  
-  <!-- RENDERÖIDÄN FIELD COLLECTIONIT -->
+    </div>
+
+    <!-- RENDERÖIDÄN FIELD COLLECTIONIT -->
+    <div id="personelInfo">
    <h2> Yhteyshenkilöt </h2>
-   <?php foreach($henkilot as $item): ?>
+   <?php 
+      $yhteyshenkilot = field_get_items('node', $node, 'field_yhteyshenkilot');
+    if ($yhteyshenkilot) {
+   foreach($henkilot as $item): ?>
     <?php print($item->field_nimi['und'][0]['value']) ?><br>
     <?php print($item->field_sahkoposti['und'][0]['value']) ?><br>
     <?php print($item->field_puhelinnumero['und'][0]['value']) ?><br>
     <?php print($item->field_profile_organization['und'][0]['taxonomy_term']->name) ?><br><br>
-   <?php endforeach; ?>
- 
+   <?php endforeach; }
+   else {
+    print("Projektissa ei ole yhteyshenkilöitä");
+   } ?>
 
-  <h2> Mukana ollevat: </h2>
-  <?php foreach($mukana as $item2): ?>
-    <?php print($item2->field_mukana_olevat_nimi['und'][0]['value']) ?><br><br>
-  <?php endforeach; ?>
-  
+  <h2> Mukana olevat henkilöt</h2> 
+  <?php
+    $mukana_olevat = field_get_items('node', $node, 'field_mukana_olevat');
+    if ($mukana_olevat) { 
+    foreach($mukana as $item2): ?>
+    <?php print($item2->field_mukana_olevat_nimi['und'][0]['value']) ?><br>
+  <?php endforeach; } 
+  else {
+    print("Projektissa ei ole mukana muita henkilöitä"); 
+  } ?>
+</div>
+
+</div>  
 <!-- GG EZ -->
+
+
+    <h2>Projektin kuvaus</h2>
+    <?php print($node->body['und'][0]['value']); ?><br>
+    <!-- Check if the result field contains data -->
+    <h2>Projektin tulos</h2>
+    <?php 
+    $tulos = field_get_items('node', $node, 'field_tulos');
+    if ($tulos) {
+      print($node->field_tulos['und'][0]['value']);
+    }
+    else {
+      print("Projekti on vielä suunnitteilla tai kesken");  
+    } 
+    ?><br>
 
   </div>
   <div class="clearfix">
