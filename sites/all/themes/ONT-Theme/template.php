@@ -109,5 +109,9 @@ function ONT_preprocess_page(&$vars) {
   if ($header == '404 Not Found') {     
     $vars['theme_hook_suggestions'][] = 'page__404';
   }
+  if (isset($vars['node']->type)) {
+    $vars['theme_hook_suggestions'][] = 'page__' . $vars['node']->type;
+  }
 }
+
 ?>
