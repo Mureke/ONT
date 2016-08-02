@@ -78,6 +78,8 @@ function require_login_authcheck() {
     (variable_get('maintenance_mode', 0)), // Maintenance Mode
     (isset($_SESSION['openid'])), // OpenID
     (preg_match('/\/cron.php/i', request_uri())), // Cron
+    (preg_match('/\/update.php/i', request_uri())), // Update
+    (preg_match('/\/install.php/i', request_uri())), // Install
     (arg(0) == 'user' && (!arg(1) || !is_numeric(arg(1)))), // User Pages
     (function_exists('drupal_is_cli') && drupal_is_cli()), // Drush
   );

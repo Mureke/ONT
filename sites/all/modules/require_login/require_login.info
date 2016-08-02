@@ -3,9 +3,9 @@ description = "Requires anonymous users to login before using the site."
 core = 7.x
 configure = admin/config/system/require-login
 
-; Information added by Drupal.org packaging script on 2016-04-15
-version = "7.x-2.2"
+; Information added by Drupal.org packaging script on 2016-07-19
+version = "7.x-2.3"
 core = "7.x"
 project = "require_login"
-datestamp = "1460733549"
+datestamp = "1468947242"
 
