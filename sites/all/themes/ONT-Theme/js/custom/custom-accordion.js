@@ -7,9 +7,11 @@
 
         if(!content.is(":visible")){
              content.slideDown(300);
+             content.parent().find('i').css('transform', 'rotate(90deg)');
         }
         else{
             content.slideUp(300);
+            content.parent().find('i').css('transform', 'rotate(0)');
         }
     });
 
@@ -29,6 +31,7 @@
 
         if(!content.is(":visible")){
              content.slideDown(300);
+             content.parent().find('i').css('transform', 'rotate(90deg)');
         }
     });
 

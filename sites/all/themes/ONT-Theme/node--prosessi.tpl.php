@@ -20,7 +20,7 @@
         <div class="accordion-header" id='<?php echo "phase_" . $counter; ?>'> 
           <span class="counter"><?php print($counter . "."); ?></span>
           <?php print($item->field_vaiheen_nimi['und'][0]['value']) ?> 
-          <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i>
+          <i class="fa fa-chevron-right" aria-hidden="true"></i>
         </div>
         <div class="accordion-content">
           <p>

@@ -30,7 +30,9 @@
 .accordion-header i{
 	float: right;
 	font-size: 1.5em;
-	padding-right: 7px;
+	padding-right: 9px;
+	padding-top: 2px;
+	transition: transform 0.5s;
 }
 
 .accordion-content{

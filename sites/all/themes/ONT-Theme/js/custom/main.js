@@ -18,6 +18,10 @@
             });
         }
     } 
+
+    $('.expanded a:first').on('click', function(){
+        event.preventDefault();
+    });
     // Execute on load
     checkHeight();
     // Bind event listener
