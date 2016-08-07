@@ -43,12 +43,19 @@
 }
 
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 980px) {
 	#profile {
 		width:100% !important;
 		height:180px !important;
 	}
 
+	#profileImage img {
+		width: 75%;
+		height: 180px !important;
+	}
+}
+
+@media screen and (max-width: 615px) {
 	#profileImage img {
 		width: 90%;
 		height: 180px !important;

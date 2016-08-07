@@ -42,6 +42,10 @@ body{
 	background:rgba(0,158,218,1)
 }
 
+.mean-expand{
+	height: auto !important;
+}
+
 #header-menu ul.menu li.expanded ul.menu {
 	width:auto;
 }
