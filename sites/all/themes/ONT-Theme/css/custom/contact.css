@@ -3,31 +3,43 @@
 #profile {
 	width: 48%;
 	display:block;
-	height: 200px;
+	height: 141px;
 	margin-right:1%;
 	float: left;
 	margin-bottom:15px;
-	border: solid white 2px;
-	background-color: white;
+	background-color: #fff;
+	color: #000;
 	font-size: 120%;
+	border-radius: 8px;
 }
 
 #profileImage img {
-	width: 100%;
-	height:200px;
+	width: 80%;
+    height: 141px;
+    float: left;
+    border-radius: 8px 0px 0px 8px;
 }
 
 #profileImage {
-	width: 45%;
-	position: relative;
-	float:left;
-	text-align:center;
+	width: 42%;
+    position: relative;
+    float: left;
+    text-align: center;
 }
 
 #profileInfo {
-	width: 48%;
-	float:right;
+	width: 50%;
+    float: left;
 	position: relative;
+}
+
+.profile-field .field-content{
+	display: inline;
+}
+
+.profile-field{
+	margin-bottom: 2px;
+    margin-top: 3px;
 }
 
 
