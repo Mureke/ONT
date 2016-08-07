@@ -19,6 +19,13 @@ body{
 	overflow:visible !important;
 }
 
+
+/* Maybe just temporary?? */
+.default-logo img{
+	    margin-top: 11%;
+    height: 68px;
+}
+
 #header-inside-right{
 	float:right;
 	width: auto;
