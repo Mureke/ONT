@@ -97,15 +97,7 @@
             <h2> Tietoa palvelusta </h2>
             
             <?php if ($tabs): ?><?php print render($tabs); ?><?php endif; ?>
-            <p id="tietoa-front"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed posuere interdum sem.
-             Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien.
-              Mauris varius diam vitae arcu.
-            Sed arcu lectus auctor vitae, consectetuer et venenatis eget velit.
-             Sed augue orci, lacinia eu tincidunt et eleifend nec lacus. Donec ultricies nisl ut felis,
-              suspendisse potenti. Lorem ipsum ligula ut hendrerit mollis, ipsum erat vehicula risus, eu suscipit sem 
-              libero nec erat. Aliquam erat volutpat. Sed congue augue vitae neque.
-               Nulla consectetuer porttitor pede. Fusce purus morbi tortor magna condimentum vel, 
-               placerat id blandit sit amet tortor. </p>
+            <p id="tietoa-front">Espoon kaupunki ja Laurea-ammattikorkekoulu tekevät vuosittain paljon erilaisia projekteja ja kehityshankkeita yhteistyössä. Laurea-ammattikorkeakoulun opiskelijat tekevät muun muassa opinnäytetöitä, opintojaksoprojekteja ja työharjoitteluja Espoon kaupungille. Tämä web palvelu suunniteltiin ja kehitettiin tukemaan Espoon kaupungin ja Laurea-ammattikorkeakoulun laajaa yhteistyötä. Palveluun on kerätty suunnitteilla olevien, käynnissä olevien ja valmiiden yhteistyöprojektien tiedot, organisaatioiden yhteyshenkilöiden tiedot sekä prosessikartat, yhteistyön parantamiseksi ja helpottamiseksi.</p>
             <div class="frontpage-content">
             <?php print render($page['content']); ?>
             </div>

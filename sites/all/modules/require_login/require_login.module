@@ -43,7 +43,7 @@ function require_login_init() {
   // automatically be redirected to /user/login. Display customizable message
   // to user stating authentication requirements.
   if (!require_login_authcheck()) {
-    $deny_message = variable_get('require_login_deny_message', REQUIRE_LOGIN_DEFAULT_MESSAGE);
+    $deny_message = filter_xss_admin(trim(variable_get('require_login_deny_message', REQUIRE_LOGIN_DEFAULT_MESSAGE)));
     drupal_set_message(t($deny_message));
     drupal_goto('user/login', array('query' => array('destination' => $_GET['q'])));
   }
@@ -56,7 +56,14 @@ function require_login_init() {
  *   Returns TRUE if authenticated and FALSE otherwise.
  */
 function require_login_authcheck() {
+  global $base_path;
   $path = drupal_get_path_alias($_GET['q']);
+
+  // Isolate request path from subdirectory when present.
+  $current_uri = request_uri();
+  if ($base_path != '/') {
+    $current_uri = '/'. str_replace($base_path, '', $current_uri);
+  }
 
   // Compare current URL with customizable excluded paths. Returns TRUE when
   // at least one excluded path matches the current page path.
@@ -77,7 +84,7 @@ function require_login_authcheck() {
     (user_is_logged_in()), // Authentication
     (variable_get('maintenance_mode', 0)), // Maintenance Mode
     (isset($_SESSION['openid'])), // OpenID
-    (preg_match('/\/cron.php/i', request_uri())), // Cron
+    (preg_match('/^\/cron.php/i', $current_uri)), // Cron
     (preg_match('/\/update.php/i', request_uri())), // Update
     (preg_match('/\/install.php/i', request_uri())), // Install
     (arg(0) == 'user' && (!arg(1) || !is_numeric(arg(1)))), // User Pages
