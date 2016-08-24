@@ -22,7 +22,9 @@
         <!-- #header-inside-right -->    
         <div id="header-inside-right" class="grid_4">
              <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('class' => array('secondary-menu', 'links', 'clearfix')))); ?>
-			<?php print render($page['search_area']); ?>
+			 <div id="searchbox">
+            <?php print render($page['search_area']); ?>
+            </div>
 
              <!-- MAIN NAVIGATION -->  
         <div id="header-menu">
