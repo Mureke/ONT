@@ -8,13 +8,15 @@
 }
 
 #block-views-ajankohtista-block{
-    width:50%;
+    width:40%;
+    margin-right: 2%;
     float:left;
    
 }
 
 #block-views-tapahtumat-block{
     width:35%;
+    margin-left: 10%;
     float:left;
     
 }
