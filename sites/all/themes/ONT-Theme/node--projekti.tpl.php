@@ -93,7 +93,9 @@
 
 
     <h2>Projektin kuvaus</h2>
+    <?php if(isset($node->body['und'][0]['value'])): ?>
     <?php print($node->body['und'][0]['value']); ?><br>
+    <?php endif; ?>
     <!-- Check if the result field contains data -->
     <h2>Projektin tulos</h2>
     <?php 
