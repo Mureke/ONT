@@ -1,8 +1,1 @@
-Alota se VITUN rapsa.... -.-
 
-Etusivu:
-	Tietoa palvelusta.
-	Logo!?!?
-
-Tee prodi kanta.
-Jos footer vielä kusee niin korjaa.
